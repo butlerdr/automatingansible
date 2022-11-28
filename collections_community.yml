@@ -1,0 +1,36 @@
+collections:
+  - name: community.mongodb
+    source: https://galaxy.ansible.com
+
+  - name: community.general
+    source: https://galaxy.ansible.com
+
+  - name: community.cockroachdb
+    source: https://galaxy.ansible.com
+
+  - name: community.docker
+    source: https://galaxy.ansible.com
+
+  - name: community.aws
+    source: https://galaxy.ansible.com
+
+  - name: community.grafana
+    source: https://galaxy.ansible.com
+
+  - name: community.hashi_vault
+    source: https://galaxy.ansible.com
+
+  - name: community.kubernetes
+    source: https://galaxy.ansible.com
+
+  - name: community.kubevirt
+    source: https://galaxy.ansible.com
+
+  - name: community.postgresql
+    source: https://galaxy.ansible.com
+
+  - name: community.rabbitmq
+    source: https://galaxy.ansible.com
+
+  - name: community.mysql
+    source: https://galaxy.ansible.com    

@@ -1,0 +1,55 @@
+---
+controller_validate_certs: false
+controller_license:
+  manifest: manifest.zip
+controller_password: '1800redhat'
+controller_username: 'admin'
+controller_settings:
+  - name: AUTH_LDAP_BIND_DN
+    value: 'CN=svc-ansible,CN=Users,DC=gpslab,DC=cbr,DC=redhat,DC=com'
+  - name: AUTH_LDAP_SERVER_URI
+    value: ldap://ipa1.gpslab.cbr.redhat.com:389
+  - name: AUTH_LDAP_BIND_PASSWORD
+    value: "1800redhat"
+  - name: AUTH_LDAP_GROUP_TYPE_PARAMS
+    value: '{"name_attr": "cn", "member_attr": "uniqueMember"}'
+  - name: AUTH_LDAP_GROUP_SEARCH
+    value: '["DC=gpslab,DC=cbr,DC=redhat,DC=com", "SCOPE_SUBTREE", "(objectClass=groupOfUniqueNames)"]'    
+  - name: AUTH_LDAP_GROUP_TYPE
+    value: "MemberDNGroupType"   
+  - name: AUTH_LDAP_USER_DN_TEMPLATE
+    value: "uid=%(user)s,CN=Users,DC=gpslab,DC=cbr,DC=redhat,DC=com"    
+
+controller_organizations:
+- name: FunkyTown
+  description: This is the Default org for all FunkyTown members
+- name: Admins
+  description: This is the Admins org for those that manage tower
+- name: Developers
+  description: This is the Developers org for FunkyTown's developers.
+
+controller_teams: 
+- name: DevX
+  description: Developers working on applicaiton X
+  organization: Developers
+- name: DevX
+  organization: Developers
+  description: Developers working on application Y
+- name: QA
+  description: QA testers
+  organization: FunkyTown
+- name: ConsumersX
+  description: End users for application X
+  organization: FunkyTown
+- name: Admins
+  description: Ansible Automation Platform Admins
+  organization: Admins  
+
+
+controller_roles:
+- team: ConsumersX
+  organization: FunkyTown
+  role: execute
+- team: DevX
+  organization: Developers
+  role: execute

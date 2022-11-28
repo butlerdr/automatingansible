@@ -1,0 +1,42 @@
+---
+- name: Syncing repos
+  hosts: hub
+  remote_user: root
+  gather_facts: False
+
+
+  pre_tasks:
+    - name: Include vars from controller_configs directory
+      include_vars:
+        dir: ./vars
+        ignore_files: [controller_config.yml.template]
+        extensions: ["yml"]
+
+  collections:
+    - redhat_cop.ah_configuration
+
+  tasks:
+
+    - name: Authenticate and get an API token
+      ah_token:
+        ah_host: "{{ ah_hostname }}"
+        ah_username: "{{ ah_username }}"
+        ah_password: "{{ ah_password }}"
+        ah_path_prefix: "{{ ah_path_prefix }}"
+        validate_certs: "{{ ah_validate_certs }}"
+      register: token
+
+ #   - name: Publish Collections to git
+ #     ansible.builtin.include_role:
+ #       name: publish
+
+    - name: Sync repositories
+      ansible.builtin.include_role:
+        name: "repository_sync"
+
+    - name: Ensure developers namespace exists (Canberra Gitlab)
+      ansible.builtin.include_role:
+        name: "namespace"
+
+      ansible.builtin.include_role:
+        name: "ee_registry"

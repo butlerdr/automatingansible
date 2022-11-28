@@ -1,0 +1,37 @@
+---
+ah_validate_certs: false
+ah_path_prefix: "galaxy"
+ah_hostname: "aap-hub1.gpslab.cbr.redhat.com"
+ah_username: "admin"
+ah_password: "1800redhat"
+ah_auto_approve: true
+ah_collections:
+  - collection_name: mycustom_collection
+    git_url: http://github.com/butlerdr
+ah_repository_certified:
+  url: 'https://console.redhat.com/api/automation-hub/content/1460290-synclist/'
+  token: "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJhZDUyMjdhMy1iY2ZkLTRjZjAtYTdiNi0zOTk4MzVhMDg1NjYifQ.eyJpYXQiOjE2Njk2MDYyMTIsImp0aSI6ImQyZTIzYWY3LTE3NjUtNDBiMS1iYTczLWVlZjY3NjJhZDVmOSIsImlzcyI6Imh0dHBzOi8vc3NvLnJlZGhhdC5jb20vYXV0aC9yZWFsbXMvcmVkaGF0LWV4dGVybmFsIiwiYXVkIjoiaHR0cHM6Ly9zc28ucmVkaGF0LmNvbS9hdXRoL3JlYWxtcy9yZWRoYXQtZXh0ZXJuYWwiLCJzdWIiOiJmOjUyOGQ3NmZmLWY3MDgtNDNlZC04Y2Q1LWZlMTZmNGZlMGNlNjpkYW5idXRsZUByZWRoYXQuY29tIiwidHlwIjoiT2ZmbGluZSIsImF6cCI6ImNsb3VkLXNlcnZpY2VzIiwibm9uY2UiOiJlOTdkODY5OS00N2YyLTQwYzctODI2OS0xYWNkNWM0MjMwZDQiLCJzZXNzaW9uX3N0YXRlIjoiYTcyZDVjYzItOTk5NC00ZTUxLTg5OWMtOTRhMDI2ZjMzNWI0Iiwic2NvcGUiOiJvcGVuaWQgYXBpLmlhbS5zZXJ2aWNlX2FjY291bnRzIG9mZmxpbmVfYWNjZXNzIiwic2lkIjoiYTcyZDVjYzItOTk5NC00ZTUxLTg5OWMtOTRhMDI2ZjMzNWI0In0.SHQwHU0FxpynpUMpigE1lH1W-3528BYaL8G3S1lc3Lg"
+
+ah_repository_community:
+  url: https://galaxy.ansible.com/api/
+  requirements:
+    - redhat_cop.ah_configuration
+    - redhat_cop.controller_configuration
+    - redhat_cop.aap_utilities
+    - redhat_cop.ee_utilities
+
+ah_namespaces:
+  - name: Canberra Gitlab
+    company: Funkytown
+    email: dane@redhat.com
+    avatar_url: https://static.redhat.com/libs/redhat/brand-assets/latest/corp/logo.svg
+    description: string
+    resources: "# Redhat Gitlab Namespace"
+    links:
+      - name: "Red Hat GitLab"
+        url: "https://gitlab.consulting.redhat.com/"
+    groups:
+      - name: system:partner-engineers
+        object_permissions:
+          - "change_namespace"
+          - "upload_to_namespace"

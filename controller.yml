@@ -1,0 +1,34 @@
+---
+
+- name: Configure Automation Controller
+  hosts: controllers
+  remote_user: root
+  gather_facts: False
+
+  pre_tasks:
+    - name: Include vars from controller_configs directory
+      include_vars:
+        dir: ./vars
+        ignore_files: [controller_config.yml.template]
+        extensions: ["yml"]  
+
+  collections: 
+    - redhat_cop.controller_configuration 
+
+  tasks:
+
+    - import_role: 
+        name: redhat_cop.controller_configuration.teams
+  
+    - import_role: 
+        name: redhat_cop.controller_configuration.organizations
+
+    - import_role: 
+        name: redhat_cop.controller_configuration.roles
+
+    - import_role:
+        name: redhat_cop.controller_configuration.license
+
+    - import_role:
+        name: redhat_cop.controller_configuration.settings
+
