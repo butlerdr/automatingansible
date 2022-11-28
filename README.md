@@ -10,3 +10,5 @@
 ## Add your vars
 
 - Your data belongs in the vars, the collections do the rest. This way your settings, your roles, repos, everything is as code
+
+- Don't forget to encrypt anything sensitive
