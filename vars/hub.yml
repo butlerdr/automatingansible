@@ -1,16 +1,16 @@
 ---
 ah_validate_certs: false
 ah_path_prefix: "galaxy"
-ah_hostname: "aap-hub1.gpslab.cbr.redhat.com"
-ah_username: "admin"
-ah_password: "1800redhat"
+ah_hostname: "aap-hub.example.com"
+ah_username: "svc-admin"
+ah_password: "$encrypted"
 ah_auto_approve: true
 ah_collections:
   - collection_name: mycustom_collection
-    git_url: http://github.com/butlerdr
+    git_url: http://github.com/example
 ah_repository_certified:
   url: 'https://console.redhat.com/api/automation-hub/content/1460290-synclist/'
-  token: "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJhZDUyMjdhMy1iY2ZkLTRjZjAtYTdiNi0zOTk4MzVhMDg1NjYifQ.eyJpYXQiOjE2Njk2MDYyMTIsImp0aSI6ImQyZTIzYWY3LTE3NjUtNDBiMS1iYTczLWVlZjY3NjJhZDVmOSIsImlzcyI6Imh0dHBzOi8vc3NvLnJlZGhhdC5jb20vYXV0aC9yZWFsbXMvcmVkaGF0LWV4dGVybmFsIiwiYXVkIjoiaHR0cHM6Ly9zc28ucmVkaGF0LmNvbS9hdXRoL3JlYWxtcy9yZWRoYXQtZXh0ZXJuYWwiLCJzdWIiOiJmOjUyOGQ3NmZmLWY3MDgtNDNlZC04Y2Q1LWZlMTZmNGZlMGNlNjpkYW5idXRsZUByZWRoYXQuY29tIiwidHlwIjoiT2ZmbGluZSIsImF6cCI6ImNsb3VkLXNlcnZpY2VzIiwibm9uY2UiOiJlOTdkODY5OS00N2YyLTQwYzctODI2OS0xYWNkNWM0MjMwZDQiLCJzZXNzaW9uX3N0YXRlIjoiYTcyZDVjYzItOTk5NC00ZTUxLTg5OWMtOTRhMDI2ZjMzNWI0Iiwic2NvcGUiOiJvcGVuaWQgYXBpLmlhbS5zZXJ2aWNlX2FjY291bnRzIG9mZmxpbmVfYWNjZXNzIiwic2lkIjoiYTcyZDVjYzItOTk5NC00ZTUxLTg5OWMtOTRhMDI2ZjMzNWI0In0.SHQwHU0FxpynpUMpigE1lH1W-3528BYaL8G3S1lc3Lg"
+  token: "$encrypted"
 
 ah_repository_community:
   url: https://galaxy.ansible.com/api/

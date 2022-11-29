@@ -2,31 +2,29 @@
 controller_validate_certs: false
 controller_license:
   manifest: manifest.zip
-controller_password: '1800redhat'
-controller_username: 'admin'
+controller_password: '$encrypted'
+controller_username: 'svc-admin'
 controller_settings:
-  - name: AWX_PROOT_BASE_PATH
-    value: "/tmp"
   - name: AUTH_LDAP_BIND_DN
-    value: 'CN=svc-ansible,CN=Users,DC=gpslab,DC=cbr,DC=redhat,DC=com'
+    value: 'CN=svc-ansible,CN=Users,DC=example,DC=com'
   - name: AUTH_LDAP_SERVER_URI
-    value: ldap://ipa1.gpslab.cbr.redhat.com:389
+    value: ldap://ipa1.example.com:389
   - name: AUTH_LDAP_BIND_PASSWORD
-    value: "1800redhat"
+    value: "$encrypted"
   - name: AUTH_LDAP_GROUP_TYPE_PARAMS
     value: '{"name_attr": "cn", "member_attr": "uniqueMember"}'
   - name: AUTH_LDAP_GROUP_SEARCH
-    value: '["DC=gpslab,DC=cbr,DC=redhat,DC=com", "SCOPE_SUBTREE", "(objectClass=groupOfUniqueNames)"]'
+    value: '["DC=example,DC=com", "SCOPE_SUBTREE", "(objectClass=groupOfUniqueNames)"]'
   - name: AUTH_LDAP_GROUP_TYPE
     value: "MemberDNGroupType"
   - name: AUTH_LDAP_USER_DN_TEMPLATE
-    value: "uid=%(user)s,CN=Users,DC=gpslab,DC=cbr,DC=redhat,DC=com"
+    value: "uid=%(user)s,CN=Users,DC=example,DC=com"
   - name: LOG_AGGREGATOR_HOST
-    value: "https://10.23.76.79"
+    value: "https://10.0.0.10"
   - name: LOG_AGGREGATOR_PORT
     value: "9600"
   - name: LOG_AGGREGATOR_TYPE
-    value: rsyslog
+    value: logstash
 #  - name: LOG_AGGREGATOR_USERNAME
 #    value: root
 #    -name: LOG_AGGREGATOR_PASSWORD

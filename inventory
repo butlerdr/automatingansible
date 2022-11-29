@@ -1,7 +1,8 @@
 [controllers]
-aap-controller.gpslab.cbr.redhat.com
+aap-controller.example.com
 
 [exec-nodes]
+aap-exec.example.com
 
 [hub]
-aap-hub1.gpslab.cbr.redhat.com
+aap-hub.example.com
