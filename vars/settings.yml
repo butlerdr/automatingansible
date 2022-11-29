@@ -8,7 +8,7 @@ controller_settings:
   - name: AUTH_LDAP_BIND_DN
     value: 'CN=svc-ansible,CN=Users,DC=example,DC=com'
   - name: AUTH_LDAP_SERVER_URI
-    value: ldap://ipa1.example.com:389
+    value: ldap://ipa.example.com:389
   - name: AUTH_LDAP_BIND_PASSWORD
     value: "$encrypted"
   - name: AUTH_LDAP_GROUP_TYPE_PARAMS
@@ -41,12 +41,12 @@ controller_settings:
     value: true
 
 controller_organizations:
-- name: FunkyTown
-  description: This is the Default org for all FunkyTown members
+- name: ExampleOrg
+  description: This is the Default org for all ExampleOrg members
 - name: Admins
   description: This is the Admins org for those that manage tower
 - name: Developers
-  description: This is the Developers org for FunkyTown's developers.
+  description: This is the Developers org for ExampleOrg's developers.
 
 controller_teams:
 - name: DevX
@@ -57,10 +57,10 @@ controller_teams:
   description: Developers working on application Y
 - name: QA
   description: QA testers
-  organization: FunkyTown
+  organization: ExampleOrg
 - name: ConsumersX
   description: End users for application X
-  organization: FunkyTown
+  organization: ExampleOrg
 - name: Admins
   description: Ansible Automation Platform Admins
   organization: Admins
@@ -68,7 +68,7 @@ controller_teams:
 
 controller_roles:
 - team: ConsumersX
-  organization: FunkyTown
+  organization: ExampleOrg
   role: execute
 - team: DevX
   organization: Developers

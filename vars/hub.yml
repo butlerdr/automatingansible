@@ -21,15 +21,15 @@ ah_repository_community:
     - redhat_cop.ee_utilities
 
 ah_namespaces:
-  - name: Canberra Gitlab
-    company: Funkytown
-    email: dane@redhat.com
+  - name:  Github
+    company: ExampleOrg
+    email: me@example.com
     avatar_url: https://static.redhat.com/libs/redhat/brand-assets/latest/corp/logo.svg
     description: string
     resources: "# Redhat Gitlab Namespace"
     links:
-      - name: "Red Hat GitLab"
-        url: "https://gitlab.consulting.redhat.com/"
+      - name: "GitHub"
+        url: "https://github.com/"
     groups:
       - name: system:partner-engineers
         object_permissions:
