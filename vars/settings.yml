@@ -5,6 +5,8 @@ controller_license:
 controller_password: '1800redhat'
 controller_username: 'admin'
 controller_settings:
+  - name: AWX_PROOT_BASE_PATH
+    value: "/tmp"
   - name: AUTH_LDAP_BIND_DN
     value: 'CN=svc-ansible,CN=Users,DC=gpslab,DC=cbr,DC=redhat,DC=com'
   - name: AUTH_LDAP_SERVER_URI
@@ -14,11 +16,31 @@ controller_settings:
   - name: AUTH_LDAP_GROUP_TYPE_PARAMS
     value: '{"name_attr": "cn", "member_attr": "uniqueMember"}'
   - name: AUTH_LDAP_GROUP_SEARCH
-    value: '["DC=gpslab,DC=cbr,DC=redhat,DC=com", "SCOPE_SUBTREE", "(objectClass=groupOfUniqueNames)"]'    
+    value: '["DC=gpslab,DC=cbr,DC=redhat,DC=com", "SCOPE_SUBTREE", "(objectClass=groupOfUniqueNames)"]'
   - name: AUTH_LDAP_GROUP_TYPE
-    value: "MemberDNGroupType"   
+    value: "MemberDNGroupType"
   - name: AUTH_LDAP_USER_DN_TEMPLATE
-    value: "uid=%(user)s,CN=Users,DC=gpslab,DC=cbr,DC=redhat,DC=com"    
+    value: "uid=%(user)s,CN=Users,DC=gpslab,DC=cbr,DC=redhat,DC=com"
+  - name: LOG_AGGREGATOR_HOST
+    value: "https://10.23.76.79"
+  - name: LOG_AGGREGATOR_PORT
+    value: "9600"
+  - name: LOG_AGGREGATOR_TYPE
+    value: rsyslog
+#  - name: LOG_AGGREGATOR_USERNAME
+#    value: root
+#    -name: LOG_AGGREGATOR_PASSWORD
+#     value: "$encrypted$"
+  - name: LOG_AGGREGATOR_LOGGERS
+    value:
+      - awx
+      - activity_stream
+      - job_events
+      - system_tracking
+  - name: LOG_AGGREGATOR_INDIVIDUAL_FACTS
+    value: false
+  - name: LOG_AGGREGATOR_ENABLED
+    value: true
 
 controller_organizations:
 - name: FunkyTown
@@ -28,7 +50,7 @@ controller_organizations:
 - name: Developers
   description: This is the Developers org for FunkyTown's developers.
 
-controller_teams: 
+controller_teams:
 - name: DevX
   description: Developers working on applicaiton X
   organization: Developers
@@ -43,7 +65,7 @@ controller_teams:
   organization: FunkyTown
 - name: Admins
   description: Ansible Automation Platform Admins
-  organization: Admins  
+  organization: Admins
 
 
 controller_roles:
